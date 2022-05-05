@@ -11,13 +11,6 @@ function Square(props) {
 }
   
   class Board extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        squares: Array(9).fill(null),
-        xIsNext: true,
-      };
-    }
 
     renderSquare(i) {
       return (
@@ -83,7 +76,7 @@ function Square(props) {
     jumpTo(step) {
       this.setState({
         stepNumber: step,
-        xIsNext: (step % 2) === 0,
+        xIsNext: (step % 2) === 0
       });
     }
     
@@ -120,7 +113,7 @@ function Square(props) {
           </div>
           <div className="game-info">
             <div>{status}</div>
-            <ol>{/* TODO */}</ol>
+            <ol>{moves}</ol>
           </div>
         </div>
       );
